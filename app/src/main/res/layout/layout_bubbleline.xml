@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/answer"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+    <TextView
+        android:id="@+id/problem_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:textSize="25sp"
+        android:text="@string/sample_problem_number" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_vertical_margin"
+        android:layout_weight="1" />
+
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:id="@+id/answer_a"
+        android:text="@string/answer_a"
+        android:layoutDirection="rtl"
+        android:textAlignment="textStart"
+        android:layout_gravity="start" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_vertical_margin_large"
+        android:layout_weight="1" />
+
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:id="@+id/answer_b"
+        android:text="@string/answer_b"
+        android:layoutDirection="rtl"
+        android:textAlignment="textStart"
+        android:layout_gravity="start" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_vertical_margin_large"
+        android:layout_weight="1" />
+
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:id="@+id/answer_c"
+        android:text="@string/answer_c"
+        android:layoutDirection="rtl"
+        android:textAlignment="textStart"
+        android:layout_gravity="start" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_vertical_margin_large"
+        android:layout_weight="1" />
+
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:id="@+id/answer_d"
+        android:text="@string/answer_d"
+        android:layoutDirection="rtl"
+        android:textAlignment="textStart"
+        android:layout_gravity="start" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_vertical_margin_large"
+        android:layout_weight="1" />
+
+    <RadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:id="@+id/answer_e"
+        android:text="@string/answer_e"
+        android:layoutDirection="rtl"
+        android:textAlignment="textStart"
+        android:layout_gravity="start" />
+
+</RadioGroup>
