@@ -9,4 +9,9 @@
     <string name="answer_e">E</string>
     <string name="sample_exam_title">Sample Exam</string>
     <string name="sample_problem_number">#</string>
+    <string name="main_menu_title">Progress Summary</string>
+    <string name="take_test">Take a Test</string>
+    <string name="my_report">My Progress Report</string>
+    <string name="create_test">Create a Custom Test</string>
+    <string name="settings">Settings</string>
 </resources>
