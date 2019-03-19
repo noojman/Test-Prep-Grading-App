@@ -32,7 +32,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="@dimen/activity_vertical_margin_large"
+        android:layout_height="@dimen/vertical_margin_large"
         android:layout_weight="1" />
 
     <RadioButton
@@ -47,7 +47,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="@dimen/activity_vertical_margin_large"
+        android:layout_height="@dimen/vertical_margin_large"
         android:layout_weight="1" />
 
     <RadioButton
@@ -62,7 +62,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="@dimen/activity_vertical_margin_large"
+        android:layout_height="@dimen/vertical_margin_large"
         android:layout_weight="1" />
 
     <RadioButton
@@ -77,7 +77,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="@dimen/activity_vertical_margin_large"
+        android:layout_height="@dimen/vertical_margin_large"
         android:layout_weight="1" />
 
     <RadioButton

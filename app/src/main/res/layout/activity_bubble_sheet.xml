@@ -17,7 +17,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="@dimen/activity_vertical_margin" />
+            android:layout_height="@dimen/vertical_margin" />
 
         <TextView
             android:id="@+id/problem_number"
@@ -28,7 +28,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="@dimen/activity_vertical_margin" />
+            android:layout_height="@dimen/vertical_margin" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -44,8 +44,8 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/activity_vertical_margin" />
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/vertical_margin" />
 
                 <include layout="@layout/layout_bubbleline"/>
                 <include layout="@layout/layout_bubbleline"/>
@@ -70,7 +70,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/activity_vertical_margin_large" />
+                    android:layout_height="@dimen/vertical_margin_large" />
 
                 <Button
                     android:id="@+id/button_submit"
