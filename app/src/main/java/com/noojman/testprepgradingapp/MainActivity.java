@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button takeTestButton = findViewById(R.id.take_test_button);
+        Button takeTestButton = findViewById(R.id.button_take_test);
         takeTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
-        Button myReportButton = findViewById(R.id.my_report_button);
+        Button myReportButton = findViewById(R.id.button_my_report);
         myReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
-        Button createTestButton = findViewById(R.id.create_test_button);
+        Button createTestButton = findViewById(R.id.button_create_test);
         createTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
-        Button settingsButton = findViewById(R.id.settings_button);
+        Button settingsButton = findViewById(R.id.button_settings);
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

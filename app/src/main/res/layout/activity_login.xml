@@ -11,7 +11,18 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
-        android:gravity="center" >
+        android:gravity="center"
+        android:weightSum="42">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/app_title"
+            tools:layout_editor_absoluteY="223dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_weight="20" />
 
         <EditText
             android:id="@+id/login_email"
@@ -20,9 +31,9 @@
             android:ems="10"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
-            android:padding="@dimen/vertical_margin"
             tools:layout_editor_absoluteX="98dp"
-            tools:layout_editor_absoluteY="201dp" />
+            tools:layout_editor_absoluteY="201dp"
+            android:layout_weight="2" />
 
         <EditText
             android:id="@+id/login_password"
@@ -31,19 +42,21 @@
             android:ems="10"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
-            android:padding="@dimen/vertical_margin"
             tools:layout_editor_absoluteX="99dp"
-            tools:layout_editor_absoluteY="270dp" />
+            tools:layout_editor_absoluteY="270dp"
+            android:layout_weight="2" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="@dimen/vertical_margin" />
+            android:layout_height="@dimen/vertical_margin"
+            android:layout_weight="0.8" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
+            android:layout_weight="1"
             android:weightSum="8">
 
             <Space
@@ -67,13 +80,15 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="@dimen/vertical_margin" />
+            android:layout_height="@dimen/vertical_margin"
+            android:layout_weight="0.2" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
+            android:layout_weight="1"
             android:weightSum="8">
 
             <Space
@@ -99,6 +114,10 @@
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/vertical_margin"
+            android:layout_weight="15" />
 
     </LinearLayout>
 

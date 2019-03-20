@@ -9,7 +9,8 @@
     <string name="answer_e">E</string>
     <string name="sample_exam_title">Sample Exam</string>
     <string name="sample_problem_number">#</string>
-    <string name="main_menu_title">Progress Summary</string>
+    <string name="app_title">Test Prep Grading App</string>
+    <string name="progress_summary">Progress Summary</string>
     <string name="take_test">Take a Test</string>
     <string name="my_report">My Progress Report</string>
     <string name="create_test">Create a Custom Test</string>
@@ -18,4 +19,5 @@
     <string name="register">Register</string>
     <string name="email_hint">email@address.com</string>
     <string name="password_hint">password</string>
+    <string name="return_to_main">Return to Main Menu</string>
 </resources>

@@ -35,6 +35,7 @@
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/answer_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|center_horizontal|center"
@@ -77,8 +78,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/submit"/>
+
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
