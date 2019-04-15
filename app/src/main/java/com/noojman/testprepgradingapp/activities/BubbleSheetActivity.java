@@ -7,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,20 +22,30 @@ import java.util.ArrayList;
 
 public class BubbleSheetActivity extends AppCompatActivity {
 
+    ArrayList<ViewGroup> answerGroups;
+    int numProblems = 20;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bubble_sheet);
 
-        /*LinearLayout answersLayout = findViewById(R.id.answer_buttons);
-        for (int i = 0; i < answersLayout.getChildCount(); i++)
+        answerGroups = new ArrayList<>();
+
+        LinearLayout answerLayout = findViewById(R.id.answer_layout);
+        for (int i = 1; i <= numProblems; i++)
         {
-            View v = answersLayout.getChildAt(i);
-            if (v instanceof RadioGroup)
-            {
-                ((TextView)(((RadioGroup)v).getChildAt(0))).setText(i + 1);
-            }
-        }*/
+            View child = getLayoutInflater().inflate(R.layout.layout_bubbleline, null);
+            String newTag = "problem_" + i;
+            child.setTag(newTag);
+            answerLayout.addView(child);
+            answerGroups.add((ViewGroup)child);
+        }
+
+        for (int i = 1; i <= answerGroups.size(); i++)
+        {
+            ((TextView)answerGroups.get(i - 1).getChildAt(0)).setText(i + "");
+        }
 
         Button submitButton = findViewById(R.id.button_submit);
         submitButton.setOnClickListener(new View.OnClickListener() {
@@ -45,15 +57,11 @@ public class BubbleSheetActivity extends AppCompatActivity {
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                LinearLayout answersLayout = findViewById(R.id.answer_buttons);
                                 ArrayList<Integer> answers = new ArrayList<>();
-                                for (int i = 0; i < answersLayout.getChildCount(); i++)
+
+                                for (int i = 0; i < answerGroups.size(); i++)
                                 {
-                                    View v = answersLayout.getChildAt(i);
-                                    if (v instanceof RadioGroup)
-                                    {
-                                        answers.add(((RadioGroup)v).indexOfChild(findViewById(((RadioGroup)v).getCheckedRadioButtonId())));
-                                    }
+                                    answers.add(((RadioGroup)answerGroups.get(i)).getCheckedRadioButtonId());
                                 }
 
                                 Intent intent = new Intent(BubbleSheetActivity.this, TestReportActivity.class);

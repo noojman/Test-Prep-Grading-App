@@ -26,7 +26,7 @@ public class TestReportActivity extends AppCompatActivity {
         ArrayList<Integer> answers = (ArrayList<Integer>)getIntent().getSerializableExtra("answers");
         for (int i = 0; i < answers.size(); i++)
         {
-            if (answers.get(i) == 1)
+            if (answers.get(i) == R.id.answer_a)
             {
                 numCorrect++;
             }
