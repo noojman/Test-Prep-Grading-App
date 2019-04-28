@@ -13,7 +13,7 @@ android:
     - build-tools-28.0.3
     - android-28
 
-    - sys-img-armeabi-v7a-android-21
+    - sys-img-armeabi-v7a-android-27
 
 before_install:
   - chmod +x gradlew
@@ -25,7 +25,7 @@ env:
     - ADB_INSTALL_TIMEOUT=8
 
 before_script:
-  - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
+  - echo no | android create avd --force -n test -t android-27 --abi armeabi-v7a
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
