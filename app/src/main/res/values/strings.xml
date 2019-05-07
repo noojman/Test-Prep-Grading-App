@@ -20,4 +20,5 @@
     <string name="email_hint">email@address.com</string>
     <string name="password_hint">password</string>
     <string name="return_to_main">Return to Main Menu</string>
+    <string name="timer_zero">00:00</string>
 </resources>
