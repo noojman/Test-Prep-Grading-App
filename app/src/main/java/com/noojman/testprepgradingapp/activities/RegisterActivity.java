@@ -109,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         //FirebaseUser user = mAuth.getCurrentUser();
 
                                         Toast.makeText(RegisterActivity.this, "Account successfully created",
-                                                Toast.LENGTH_LONG).show();
+                                                Toast.LENGTH_SHORT).show();
 
                                         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

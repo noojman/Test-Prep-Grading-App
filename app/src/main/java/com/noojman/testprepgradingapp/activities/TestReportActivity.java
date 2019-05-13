@@ -24,7 +24,10 @@ public class TestReportActivity extends AppCompatActivity {
         // TODO reference with answer key for grading
 
         int numCorrect = 0;
+
+        @SuppressWarnings("unchecked")
         ArrayList<Integer> answers = (ArrayList<Integer>)getIntent().getSerializableExtra("answers");
+
         for (int i = 0; i < answers.size(); i++)
         {
             if (answers.get(i) == R.id.answer_a)
@@ -34,7 +37,8 @@ public class TestReportActivity extends AppCompatActivity {
         }
 
         TextView scoreText = findViewById(R.id.score_text);
-        scoreText.setText("Your score: " + numCorrect + "/" + answers.size());
+        String yourScoreText = "Your score: ";
+        scoreText.setText(yourScoreText.concat(String.valueOf(numCorrect)).concat("/").concat(String.valueOf(answers.size())));
 
         Button mainMenuButton = findViewById(R.id.button_main_menu);
         mainMenuButton.setOnClickListener(new View.OnClickListener() {

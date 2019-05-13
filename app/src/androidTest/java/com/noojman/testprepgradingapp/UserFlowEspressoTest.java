@@ -12,6 +12,7 @@ import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import com.google.firebase.auth.FirebaseAuth;
 import com.noojman.testprepgradingapp.activities.LoginActivity;
 import com.noojman.testprepgradingapp.activities.SettingsActivity;
+import com.noojman.testprepgradingapp.activities.SplashScreenActivity;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -38,8 +39,8 @@ public class UserFlowEspressoTest {
     private String examplePassword;
 
     @Rule
-    public ActivityTestRule<LoginActivity> activityRule =
-            new ActivityTestRule<>(LoginActivity.class);
+    public ActivityTestRule<SplashScreenActivity> activityRule =
+            new ActivityTestRule<>(SplashScreenActivity.class);
 
     @Before
     public void init()
@@ -53,22 +54,30 @@ public class UserFlowEspressoTest {
     @Test
     public void signInTest()
     {
-        onView(withId(R.id.login_email)).perform(typeText(exampleEmail));
-        onView(withId(R.id.login_password)).perform(typeText(examplePassword));
-        Espresso.closeSoftKeyboard();
-        onView(withId(R.id.button_sign_in)).perform(click());
         try {
             Thread.sleep(3000);
         } catch (Exception e)
         {
             e.printStackTrace();
         }
+
+        onView(withId(R.id.login_email)).perform(typeText(exampleEmail));
+        onView(withId(R.id.login_password)).perform(typeText(examplePassword));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.button_sign_in)).perform(click());
+
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
         intended(hasComponent(MainActivity.class.getName()));
 
         onView(withId(R.id.button_settings)).perform(click());
         intended(hasComponent(SettingsActivity.class.getName()));
 
         onView(withId(R.id.button_sign_out)).perform(click());
-        intended(hasComponent(LoginActivity.class.getName()));
     }
 }

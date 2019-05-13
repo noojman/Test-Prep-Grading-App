@@ -65,57 +65,94 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button_take_test"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/take_test"
-            android:textSize="18sp"
             android:gravity="center"
-            android:backgroundTint="@color/colorAccent"
-            android:textColor="@color/black"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="465dp" />
+            android:orientation="horizontal"
+            android:layout_weight="8"
+            android:weightSum="1">
 
-        <Button
-            android:id="@+id/button_my_report"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/my_report"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:backgroundTint="@color/colorAccent"
-            android:textColor="@color/black"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="328dp" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"/>
 
-        <Button
-            android:id="@+id/button_create_test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/create_test"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:backgroundTint="@color/colorAccent"
-            android:textColor="@color/black"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="212dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="0.8">
 
-        <Button
-            android:id="@+id/button_settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/settings"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:backgroundTint="@color/colorAccent"
-            android:textColor="@color/black"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="596dp" />
+                <Button
+                    android:id="@+id/button_take_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/take_test"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="161dp"
+                    tools:layout_editor_absoluteY="465dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_vertical_margin" />
+
+                <Button
+                    android:id="@+id/button_my_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/my_report"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="161dp"
+                    tools:layout_editor_absoluteY="328dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_vertical_margin" />
+
+                <Button
+                    android:id="@+id/button_create_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/create_test"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="161dp"
+                    tools:layout_editor_absoluteY="212dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_vertical_margin" />
+
+                <Button
+                    android:id="@+id/button_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/settings"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="161dp"
+                    tools:layout_editor_absoluteY="596dp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
