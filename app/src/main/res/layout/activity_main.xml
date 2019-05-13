@@ -11,10 +11,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
+        android:background="@color/colorPrimaryDark"
         android:weightSum="19" >
 
         <TextView
-            android:id="@+id/main_menu_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -73,6 +73,8 @@
             android:text="@string/take_test"
             android:textSize="18sp"
             android:gravity="center"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/black"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="465dp" />
 
@@ -84,6 +86,8 @@
             android:text="@string/my_report"
             android:textSize="18sp"
             android:gravity="center"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/black"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="328dp" />
 
@@ -95,6 +99,8 @@
             android:text="@string/create_test"
             android:textSize="18sp"
             android:gravity="center"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/black"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="212dp" />
 
@@ -106,6 +112,8 @@
             android:text="@string/settings"
             android:textSize="18sp"
             android:gravity="center"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/black"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="596dp" />
 

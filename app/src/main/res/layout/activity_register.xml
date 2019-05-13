@@ -13,20 +13,20 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
         android:gravity="center"
-        android:weightSum="42">
+        android:weightSum="45.8">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/login_title"
+            android:text="@string/create_account_title"
             tools:layout_editor_absoluteY="223dp"
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="@color/white"
-            android:layout_weight="20" />
+            android:layout_weight="22" />
 
         <EditText
-            android:id="@+id/login_email"
+            android:id="@+id/register_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -38,11 +38,23 @@
             android:layout_weight="2" />
 
         <EditText
-            android:id="@+id/login_password"
+            android:id="@+id/create_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/password_hint"
+            android:hint="@string/password_create"
+            android:inputType="textPassword"
+            android:textColor="@color/colorAccent"
+            tools:layout_editor_absoluteX="99dp"
+            tools:layout_editor_absoluteY="270dp"
+            android:layout_weight="2" />
+
+        <EditText
+            android:id="@+id/confirm_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password_confirm"
             android:inputType="textPassword"
             android:textColor="@color/colorAccent"
             tools:layout_editor_absoluteX="99dp"
@@ -59,7 +71,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:weightSum="8">
 
             <Space
@@ -68,50 +80,13 @@
                 android:layout_weight="2" />
 
             <Button
-                android:id="@+id/button_sign_in"
+                android:id="@+id/button_create_account"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:background="@color/colorAccent"
                 android:textColor="@color/black"
-                android:text="@string/sign_in" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2" />
-
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/vertical_margin"
-            android:layout_weight="0.2" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_weight="1"
-            android:weightSum="8">
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2" />
-
-
-            <TextView
-                android:id="@+id/button_register"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:text="@string/register"
-                android:gravity="center_horizontal"
-                android:textColor="@color/black"
-                android:clickable="true"
-                android:focusable="true"/>
+                android:text="@string/create_account" />
 
             <Space
                 android:layout_width="0dp"

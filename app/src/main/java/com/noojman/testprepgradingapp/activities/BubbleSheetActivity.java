@@ -2,21 +2,16 @@ package com.noojman.testprepgradingapp.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.noojman.testprepgradingapp.R;
 
@@ -87,7 +82,6 @@ public class BubbleSheetActivity extends AppCompatActivity {
             ((TextView)answerGroups.get(i - 1).getChildAt(0)).setText(i + "");
         }
 
-        //TODO begin test button
         new AlertDialog.Builder(BubbleSheetActivity.this)
                 .setTitle("Ready?")
                 .setMessage("Press OK to begin the test.")

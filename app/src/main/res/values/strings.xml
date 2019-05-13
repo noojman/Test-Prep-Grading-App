@@ -12,13 +12,20 @@
     <string name="app_title">Test Prep Grading App</string>
     <string name="progress_summary">Progress Summary</string>
     <string name="take_test">Take a Test</string>
+    <string name="find_test">Find a Test</string>
+    <string name="resume_test">Resume a Test</string>
     <string name="my_report">My Progress Report</string>
     <string name="create_test">Create a Custom Test</string>
     <string name="settings">Settings</string>
     <string name="sign_in">Sign in</string>
     <string name="register">Register</string>
     <string name="email_hint">email@address.com</string>
-    <string name="password_hint">password</string>
+    <string name="password_hint">******</string>
+    <string name="password_create">Create password</string>
+    <string name="password_confirm">Confirm password</string>
+    <string name="login_title">Sign In to Your Account</string>
+    <string name="create_account_title">Create an Account</string>
+    <string name="create_account">Create account</string>
     <string name="return_to_main">Return to Main Menu</string>
     <string name="timer_zero">00:00</string>
 </resources>

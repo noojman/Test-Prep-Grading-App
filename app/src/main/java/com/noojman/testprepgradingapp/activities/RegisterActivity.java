@@ -9,20 +9,20 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.noojman.testprepgradingapp.MainActivity;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.noojman.testprepgradingapp.R;
 
 import java.util.regex.Pattern;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile("^" +   // start-of-string
                     "(?=.*[0-9])" + // a digit must occur at least once
@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText textInputEmail;
     private EditText textInputPassword;
+    private EditText textInputConfirmPassword;
 
     private FirebaseAuth mAuth;
 
@@ -56,8 +57,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean validatePassword() {
         String passwordInput = textInputPassword.getEditableText().toString().trim();
+        String passwordConfirmInput = textInputConfirmPassword.getEditableText().toString().trim();
 
-        if (passwordInput.isEmpty()) {
+        if (!passwordInput.equals(passwordConfirmInput))
+        {
+            textInputConfirmPassword.setError("Password does not match");
+            textInputConfirmPassword.requestFocus();
+            return false;
+        } else if (passwordInput.isEmpty()) {
             textInputPassword.setError("Field can't be empty");
             textInputPassword.requestFocus();
             return false;
@@ -67,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         } else {
             textInputPassword.setError(null);
+            textInputConfirmPassword.setError(null);
             return true;
         }
     }
@@ -74,75 +82,63 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
 
-        textInputEmail = findViewById(R.id.login_email);
-        textInputPassword = findViewById(R.id.login_password);
+        textInputEmail = findViewById(R.id.register_email);
+        textInputPassword = findViewById(R.id.create_password);
+        textInputConfirmPassword = findViewById(R.id.confirm_password);
 
-        Button signInButton = findViewById(R.id.button_sign_in);
-        signInButton.setOnClickListener(new View.OnClickListener() {
+        Button createAccountButton = findViewById(R.id.button_create_account);
+        createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validateEmail() && validatePassword())
                 {
-                    mAuth.signInWithEmailAndPassword(
+                    mAuth.createUserWithEmailAndPassword(
                             textInputEmail.getEditableText().toString().trim(),
                             textInputPassword.getEditableText().toString().trim())
-                            .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                            .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        Log.d("LoginActivity", "signInWithEmail:success");
+                                        Log.d("RegisterActivity", "createUserWithEmail:success");
 
                                         //FirebaseUser user = mAuth.getCurrentUser();
 
-                                        Toast.makeText(LoginActivity.this, "Sign in successful",
+                                        Toast.makeText(RegisterActivity.this, "Account successfully created",
                                                 Toast.LENGTH_LONG).show();
 
-                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                         startActivity(intent);
-                                        finish();
                                     } else {
                                         // If sign in fails, display a message to the user.
-                                        Log.w("LoginActivity", "signInWithEmail:failure", task.getException());
+                                        Log.w("RegisterActivity", "createUserWithEmail:failure", task.getException());
 
-                                        Toast.makeText(LoginActivity.this, "Authentication failed",
+                                        Toast.makeText(RegisterActivity.this, "Authentication failed",
                                                 Toast.LENGTH_SHORT).show();
 
-                                        textInputEmail.setError("Invalid email or password");
-                                        textInputEmail.requestFocus();
+                                        try {
+                                            throw task.getException();
+                                        } catch(FirebaseAuthWeakPasswordException e) {
+                                            textInputPassword.setError("Password too weak");
+                                            textInputPassword.requestFocus();
+                                        } catch(FirebaseAuthInvalidCredentialsException e) {
+                                            textInputEmail.setError("Please enter a valid email address");
+                                            textInputEmail.requestFocus();
+                                        } catch(FirebaseAuthUserCollisionException e) {
+                                            textInputEmail.setError("User already exists");
+                                            textInputEmail.requestFocus();
+                                        } catch(Exception e) {
+                                            Log.e("RegisterActivity", e.getMessage());
+                                        }
                                     }
                                 }
                             });
                 }
             }
         });
-
-        TextView registerButton = findViewById(R.id.button_register);
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        if (currentUser != null)
-        {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
     }
 }

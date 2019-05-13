@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.noojman.testprepgradingapp.activities.BubbleSheetActivity;
+import com.noojman.testprepgradingapp.activities.SettingsActivity;
+import com.noojman.testprepgradingapp.activities.TakeTestActivity;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -19,7 +21,8 @@ public class MainActivity extends AppCompatActivity  {
         takeTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BubbleSheetActivity.class);
+                //TODO test selection page
+                Intent intent = new Intent(MainActivity.this, TakeTestActivity.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +31,8 @@ public class MainActivity extends AppCompatActivity  {
         myReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(this, .class);
+                //TODO report page
+                /*Intent intent = new Intent(MainActivity.this, .class);
                 startActivity(intent);*/
             }
         });
@@ -37,7 +41,8 @@ public class MainActivity extends AppCompatActivity  {
         createTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(this, .class);
+                //TODO create test page
+                /*Intent intent = new Intent(MainActivity.this, .class);
                 startActivity(intent);*/
             }
         });
@@ -46,8 +51,8 @@ public class MainActivity extends AppCompatActivity  {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(this, .class);
-                startActivity(intent);*/
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
             }
         });
     }

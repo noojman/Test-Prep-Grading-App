@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal|center"
         android:orientation="vertical"
+        android:background="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintTop_toTopOf="parent">
