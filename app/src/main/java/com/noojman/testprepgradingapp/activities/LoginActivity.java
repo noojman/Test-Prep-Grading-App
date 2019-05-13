@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             textInputEmail.requestFocus();
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
-            textInputEmail.setError("Please enter a valid email address");
+            textInputEmail.setError("Invalid email or password");
             textInputEmail.requestFocus();
             return false;
         } else {
@@ -62,8 +62,8 @@ public class LoginActivity extends AppCompatActivity {
             textInputPassword.requestFocus();
             return false;
         } else if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
-            textInputPassword.setError("Password too weak");
-            textInputPassword.requestFocus();
+            textInputEmail.setError("Invalid email or password");
+            textInputEmail.requestFocus();
             return false;
         } else {
             textInputPassword.setError(null);
@@ -103,14 +103,12 @@ public class LoginActivity extends AppCompatActivity {
                                                 Toast.LENGTH_LONG).show();
 
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                         finish();
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w("LoginActivity", "signInWithEmail:failure", task.getException());
-
-                                        Toast.makeText(LoginActivity.this, "Authentication failed",
-                                                Toast.LENGTH_SHORT).show();
 
                                         textInputEmail.setError("Invalid email or password");
                                         textInputEmail.requestFocus();
@@ -141,6 +139,7 @@ public class LoginActivity extends AppCompatActivity {
         if (currentUser != null)
         {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
         }

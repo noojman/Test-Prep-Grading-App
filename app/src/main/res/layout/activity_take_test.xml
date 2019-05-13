@@ -1,51 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryDark"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical|center_horizontal|center"
         android:orientation="vertical"
-        android:background="@color/colorPrimaryDark"
-        android:gravity="center"
-        android:weightSum="5" >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
             android:text="@string/take_test"
             android:textAlignment="center"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="176dp"
-            tools:layout_editor_absoluteY="45dp" />
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_vertical_margin" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_vertical_margin" />
 
         <Button
             android:id="@+id/button_find_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/find_test"
-            android:textSize="18sp"
-            android:gravity="center"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="465dp" />
+            android:background="@color/colorAccent"
+            android:textColor="@color/black"
+            android:text="@string/find_test" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_vertical_margin" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_vertical_margin" />
 
         <Button
             android:id="@+id/button_resume_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/resume_test"
-            android:textSize="18sp"
-            android:gravity="center"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="328dp" />
+            android:background="@color/colorAccent"
+            android:textColor="@color/black"
+            android:text="@string/resume_test" />
 
     </LinearLayout>
 
