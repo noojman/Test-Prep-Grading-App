@@ -17,11 +17,12 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // TODO main menu progress report
+
         Button takeTestButton = findViewById(R.id.button_take_test);
         takeTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO test selection page
                 Intent intent = new Intent(MainActivity.this, TakeTestActivity.class);
                 startActivity(intent);
             }
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity  {
         myReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO report page
+                // TODO report page
                 /*Intent intent = new Intent(MainActivity.this, .class);
                 startActivity(intent);*/
             }
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity  {
         createTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO create test page
+                // TODO create test page
                 /*Intent intent = new Intent(MainActivity.this, .class);
                 startActivity(intent);*/
             }

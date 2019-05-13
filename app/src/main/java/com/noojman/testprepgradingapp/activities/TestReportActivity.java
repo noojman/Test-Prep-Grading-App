@@ -19,6 +19,10 @@ public class TestReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_report);
 
+        // TODO show progression and prediction statistics
+
+        // TODO reference with answer key for grading
+
         int numCorrect = 0;
         ArrayList<Integer> answers = (ArrayList<Integer>)getIntent().getSerializableExtra("answers");
         for (int i = 0; i < answers.size(); i++)

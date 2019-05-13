@@ -21,6 +21,8 @@ import java.util.Date;
 
 public class BubbleSheetActivity extends AppCompatActivity {
 
+    // TODO add dynamic problems count and time input depending on test
+
     ArrayList<ViewGroup> answerGroups;
     int numProblems = 20;
     int timerSeconds = 10;
@@ -79,7 +81,7 @@ public class BubbleSheetActivity extends AppCompatActivity {
 
         for (int i = 1; i <= answerGroups.size(); i++)
         {
-            ((TextView)answerGroups.get(i - 1).getChildAt(0)).setText(i + "");
+            ((TextView)answerGroups.get(i - 1).getChildAt(0)).setText(String.valueOf(i));
         }
 
         new AlertDialog.Builder(BubbleSheetActivity.this)
