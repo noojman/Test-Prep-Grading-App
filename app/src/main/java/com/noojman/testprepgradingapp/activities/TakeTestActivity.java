@@ -1,5 +1,6 @@
 package com.noojman.testprepgradingapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,9 +19,8 @@ public class TakeTestActivity extends AppCompatActivity {
         findTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO find test page
-                /*Intent intent = new Intent(this, .class);
-                startActivity(intent);*/
+                Intent intent = new Intent(TakeTestActivity.this, FindTestActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -28,9 +28,8 @@ public class TakeTestActivity extends AppCompatActivity {
         resumeTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO resume test page
-                /*Intent intent = new Intent(this, .class);
-                startActivity(intent);*/
+                Intent intent = new Intent(TakeTestActivity.this, ResumeTestActivity.class);
+                startActivity(intent);
             }
         });
     }

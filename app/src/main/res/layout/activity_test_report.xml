@@ -89,7 +89,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="@string/return_to_main" />
+                android:text="@string/return_to_main"
+                android:gravity="center"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="@color/black" />
 
             <Space
                 android:layout_width="0dp"

@@ -28,11 +28,22 @@ public class BubbleSheetActivity extends AppCompatActivity {
     int timerSeconds = 10;
     TextView timerText;
     CountDownTimer timer;
+    boolean testStarted = false;
+
+    @Override
+    public void onBackPressed() {
+        if (!testStarted) {
+            super.onBackPressed();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bubble_sheet);
+
+        numProblems = (int)getIntent().getSerializableExtra("numProblems");
+        timerSeconds = (int)getIntent().getSerializableExtra("timerSeconds");
 
         timerText = findViewById(R.id.timer_text);
 
@@ -92,6 +103,7 @@ public class BubbleSheetActivity extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         timer.start();
+                        testStarted = true;
                     }})
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
