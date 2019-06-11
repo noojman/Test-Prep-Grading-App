@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.ResumeTestActivity"></activity>
+        <activity android:name=".activities.CreateTestActivity"></activity>
+        <activity android:name=".activities.ResumeTestActivity" />
         <activity android:name=".activities.FindTestActivity" />
         <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>

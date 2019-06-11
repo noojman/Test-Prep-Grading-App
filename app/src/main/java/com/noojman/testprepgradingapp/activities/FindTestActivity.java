@@ -74,9 +74,7 @@ public class FindTestActivity extends AppCompatActivity {
                 Intent intent = new Intent(FindTestActivity.this, BubbleSheetActivity.class);
                 intent.putExtra("numProblems", numProblems);
                 intent.putExtra("timerSeconds", timerSeconds);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-                finish();
             }
 
             @Override
