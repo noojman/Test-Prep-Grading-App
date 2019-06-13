@@ -26,8 +26,6 @@ import java.util.Date;
 
 public class BubbleSheetActivity extends AppCompatActivity {
 
-    // TODO add dynamic problems count and time input depending on test
-
     ArrayList<ViewGroup> answerGroups;
     int numProblems;
     int timerSeconds;
@@ -141,7 +139,6 @@ public class BubbleSheetActivity extends AppCompatActivity {
                         @Override
                         public boolean onKey(DialogInterface arg0, int keyCode,
                                              KeyEvent event) {
-                            // TODO Auto-generated method stub
                             if (keyCode == KeyEvent.KEYCODE_BACK) {
                                 finish();
                             }

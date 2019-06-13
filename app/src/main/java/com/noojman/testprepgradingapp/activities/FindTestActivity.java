@@ -33,7 +33,6 @@ public class FindTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_test);
 
-        //TODO GET FROM FIREBASE
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("tests")
                 .get()
