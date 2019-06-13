@@ -7,7 +7,7 @@
     <string name="answer_c">C</string>
     <string name="answer_d">D</string>
     <string name="answer_e">E</string>
-    <string name="sample_exam_title">Sample Exam</string>
+    <string name="exam_title">Exam Title</string>
     <string name="sample_problem_number">#</string>
     <string name="app_title">The Test Prep Grading App</string>
     <string name="progress_summary">Progress Summary</string>
@@ -30,5 +30,6 @@
     <string name="create_account_title">Create an Account</string>
     <string name="create_account">Create account</string>
     <string name="return_to_main">Return to Main Menu</string>
+    <string name="proceed_to_answer_key">Proceed to Answer Key</string>
     <string name="timer_zero">00:00</string>
 </resources>

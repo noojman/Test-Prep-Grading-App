@@ -45,7 +45,8 @@ public class FindTestActivity extends AppCompatActivity {
                                 tests.add(new RowData(document.getData().get("bookTitle").toString(),
                                         document.getData().get("publisherName").toString(),
                                         Integer.parseInt(document.getData().get("testNum").toString()),
-                                        Integer.parseInt(document.getData().get("numProblems").toString())));
+                                        Integer.parseInt(document.getData().get("numProblems").toString()),
+                                        Integer.parseInt(document.getData().get("timerSeconds").toString())));
                             }
                             setTestList();
                         } else {
@@ -69,11 +70,13 @@ public class FindTestActivity extends AppCompatActivity {
         recyclerView.addOnItemTouchListener(new CustomRVItemTouchListener(this, recyclerView, new RecyclerViewItemClickListener() {
             @Override
             public void onClick(View view, int position) {
-                int numProblems = ((Recycler_View_Adapter) recyclerView.getAdapter()).getData().get(position).numProblems;
-                int timerSeconds = 30; // TODO add timer seconds length as a test-specific field for each
                 Intent intent = new Intent(FindTestActivity.this, BubbleSheetActivity.class);
-                intent.putExtra("numProblems", numProblems);
-                intent.putExtra("timerSeconds", timerSeconds);
+                intent.putExtra("bookTitle", ((Recycler_View_Adapter) recyclerView.getAdapter()).getData().get(position).title);
+                intent.putExtra("publisherName", ((Recycler_View_Adapter) recyclerView.getAdapter()).getData().get(position).publisher);
+                intent.putExtra("testNum", ((Recycler_View_Adapter) recyclerView.getAdapter()).getData().get(position).testNumber);
+                intent.putExtra("numProblems", ((Recycler_View_Adapter) recyclerView.getAdapter()).getData().get(position).numProblems);
+                intent.putExtra("timerSeconds", ((Recycler_View_Adapter) recyclerView.getAdapter()).getData().get(position).timerSeconds);
+                intent.putExtra("answerKeySelectionMode", false);
                 startActivity(intent);
             }
 
