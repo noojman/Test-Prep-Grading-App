@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/progress_summary"
+            android:text="@string/test_report"
             android:textAlignment="center"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="176dp"

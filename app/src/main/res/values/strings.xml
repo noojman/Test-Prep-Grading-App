@@ -14,6 +14,7 @@
     <string name="take_test">Take a Test</string>
     <string name="find_test">Find a Test</string>
     <string name="resume_test">Resume a Test</string>
+    <string name="test_report">Test Report</string>
     <string name="my_report">My Progress Report</string>
     <string name="create_test">Create a Custom Test</string>
     <string name="settings">Settings</string>
